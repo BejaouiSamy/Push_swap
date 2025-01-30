@@ -8,7 +8,7 @@ LIBFT_PATH = ./libft
 LIBFT = $(LIBFT_PATH)/libft.a
 INC = -I ./includes -I $(LIBFT_PATH)
 
-SRC_PATH = ./src 
+SRC_PATH = ./src
 SRC = merge_sort.c \
 	push_sort.c \
 	rotate_sort.c \
@@ -21,6 +21,17 @@ OBJ_PATH = ./obj
 OBJ = $(addprefix $(OBJ_PATH)/, $(SRC:.c=.o))
 
 all: $(NAME)
+
+debug:
+	@echo "Current directory:"
+	@pwd
+	@echo "\nSRC path content:"
+	@ls -l $(SRC_PATH)
+	@echo "\nChecking full paths:"
+	@for file in $(SRC); do \
+		echo "Looking for: $(SRC_PATH)/$$file"; \
+		ls $(SRC_PATH)/$$file || echo "$$file not found"; \
+	done
 
 $(NAME): $(LIBFT) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)

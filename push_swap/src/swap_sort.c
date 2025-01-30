@@ -1,4 +1,5 @@
 #include "push_swap.h"
+#include "libft.h"
 
 // Swap les 2 premiers elements de la pile A
 void sa(t_stack *stack_a)
@@ -26,8 +27,8 @@ void ss(t_stack *stack_a, t_stack *stack_b)
     if (stack_a && stack_b
         && stack_a->size >= 2 && stack_b->size >= 2)
     {
-        swap(&stack_a->numbers[0], &stack_a->numbers[1]);
-        swap(&stack_b->numbers[0], &stack_b->numbers[1]);
+        ft_swap(&stack_a->numbers[0], &stack_a->numbers[1]);
+        ft_swap(&stack_b->numbers[0], &stack_b->numbers[1]);
         write(1, "ss\n", 3);
     }
 }

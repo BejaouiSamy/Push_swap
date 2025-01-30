@@ -4,11 +4,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <stdio.h>
 
 typedef struct s_stack {
     int *numbers;
     int size;
-    int top;
+    int capacity;
 }   t_stack;
 
 int find_min(t_stack *stack, int start, int size);
