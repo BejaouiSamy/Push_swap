@@ -24,6 +24,7 @@ t_stack *create_stack(int size)
 // Fonction pour liberer une pile
 void free_stack(t_stack *stack)
 {
+
     if (stack)
     {
         if (stack->numbers)
@@ -58,8 +59,7 @@ int main(int argc, char **argv)
 
     if (argc < 2)
     {
-        printf("Usage: %s [list of integers]\n", argv[0]);
-        printf("For random numbers, use: ARG=$(seq 1 100 | shuf); ./push_swap $ARG\n");
+        write(2, "error : no arguments\n", 21);
         return (1);
     }
 
@@ -75,20 +75,20 @@ int main(int argc, char **argv)
     // Remplir la pile A avec les arguments
     for (i = 1; i < argc; i++)
     {
-        if (!is_int(argv[i]))
-        {
+        if (is_int(argv[i]))
+        {;
             free_stack(stack_a);
             free_stack(stack_b);
             write(2, "Error\n", 6);
             return (1);
         }
-        stack_a->numbers[i - 1] = atoi(argv[i]);
+        stack_a->numbers[i - 1] = ft_atoi(argv[i]);
     }
     stack_a->size = argc - 1;
 
     // Vérifier les doublons
     if (is_duplicated(stack_a->numbers, stack_a->size))
-    {
+    {      
         free_stack(stack_a);
         free_stack(stack_b);
         write(2, "Error\n", 6);
@@ -105,7 +105,6 @@ int main(int argc, char **argv)
     // Afficher la pile triée
     printf("\nPile triée:\n");
     print_stack(stack_a);
-
     // Libérer la mémoire
     free_stack(stack_a);
     free_stack(stack_b);

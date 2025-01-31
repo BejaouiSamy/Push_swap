@@ -1,5 +1,6 @@
 #include "push_swap.h"
 
+// Prend le premier element de B et le met sur A
 void pa(t_stack *stack_a, t_stack *stack_b)
 {
     int i;
@@ -25,6 +26,7 @@ void pa(t_stack *stack_a, t_stack *stack_b)
     }
 }
 
+// Prend le premier element de A et le met sur B
 void pb(t_stack *stack_a, t_stack *stack_b)
 {
     int i;

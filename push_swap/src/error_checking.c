@@ -11,7 +11,7 @@ int	ft_isdigit(int c)
 
 int is_int(const char *str)
 {
-    long                                    result;
+    long result;
     int sign;
 
     sign = 1;
@@ -27,7 +27,9 @@ int is_int(const char *str)
     while(*str)
     {
         if (!ft_isdigit(*str))
+        {
             return (0);
+        }
         result = result * 10 + (*str - '0');
         if (result * sign > INT_MAX || result * sign < INT_MIN)
             return (0);

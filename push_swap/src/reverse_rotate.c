@@ -2,9 +2,7 @@
 
 // Reverse rotate A - decale d'une position vers le bas tous les elements A
 void rra(t_stack *stack_a)
-{
-    printf("Current stack size: %d\n", stack_a->size);
-    
+{  
     int temp;
     int i;
 
