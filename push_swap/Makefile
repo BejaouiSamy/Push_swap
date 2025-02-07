@@ -9,13 +9,9 @@ LIBFT = $(LIBFT_PATH)/libft.a
 INC = -I ./includes -I $(LIBFT_PATH)
 
 SRC_PATH = ./src
-SRC = merge_sort.c \
-	push_sort.c \
-	rotate_sort.c \
-	init_stack.c \
-	error_checking.c \
-	swap_sort.c \
-	reverse_rotate.c
+SRC = push_swap.c sort.c Utils_functions.c \
+		quicksort.c Instructions_1.c Instructions_2.c \
+		Instructions_3.c  Instructions_4.c 
 
 OBJ_PATH = ./obj
 OBJ = $(addprefix $(OBJ_PATH)/, $(SRC:.c=.o))

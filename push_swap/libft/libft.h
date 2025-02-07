@@ -41,6 +41,5 @@ char	*ft_strtrim(char *s1, char *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
-void ft_swap(int *a, int *b);
 
 #endif
